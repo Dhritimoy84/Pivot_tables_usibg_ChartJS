@@ -685,8 +685,69 @@
             }
         });
 
+// *************************************************************************
 
 
+const ctx11 = document.getElementById('schoolInfraScore');
+        new Chart(ctx11, {
+            type: 'bar',
+            data: {
+                labels: ["Lower Primary School", "Middle School"],
+                datasets: [{
+                    label: 'Infrastructure Score',
+                    data: [28.54, 25.6],
+                    backgroundColor: [
+                        'rgba(205, 26, 104)',
+                       
+
+                        'rgba(78, 182, 215)'
+
+                    ],
+                    borderWidth: 1
+                },
+                ]
+            },
+            options: {
+                responsive: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'School Infrastructure Score     82.00%',
+
+                        font: {
+                            size: 20,
+                            weight: "bold",
+                        }
+                    }
+                },
+
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'School Type'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Score'
+                        },
+                        Min: 0,
+                        Max: 30,
+                        ticks: {
+                            // forces step size to be 50 units
+                            stepSize: 5,
+                        }
+                    }
+                }
+
+
+            }
+        });
 
 
 
