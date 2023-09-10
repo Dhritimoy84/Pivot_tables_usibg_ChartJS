@@ -79,7 +79,7 @@
         });
 
 
-
+        // ************************************************************************
 
         const ctx2 = document.getElementById('noOfStudent');
 
@@ -125,6 +125,7 @@
             }
         });
 
+        // ********************************************************************
 
         const ctx3 = document.getElementById('noOfTeacher');
 
@@ -225,22 +226,22 @@
             }
         });
 
-
+        // ****************************************************************
 
         const ctx5 = document.getElementById('avgPatScore');
         new Chart(ctx5, {
             type: 'bar',
             data: {
-                labels: ["Mathematics", "Listening Comprehension", "Reading Comprehension", "Reading Vocabulary"],
+                labels: ["Mathematics", "Science", "English", "Sport"],
                 datasets: [{
                     label: 'PAT Score',
 
-                    data: [9.0, 8.4, 6, 12],
+                    data: [40, 54, 61, 52],
                     backgroundColor: [
-                        'rgba(235, 26, 104)',
-                        'rgba(155, 16, 106)',
-                        'rgba(235, 76, 107)',
-                        'rgba(74, 162, 235)'
+                        'rgba(25, 26, 04)',
+                        'rgba(159, 16, 206)',
+                        'rgba(35, 76, 156)',
+                        'rgba(74, 132, 135)'
 
                     ],
                     borderWidth: 1
@@ -273,22 +274,23 @@
                         }
                     },
                     y: {
+                        display: true,
                         title: {
                             display: true,
-                            text: 'Ratio'
+                            text: 'Score'
                         },
-                        Min: 40,
-                        Max: 70,
+                        Min: 0,
+                        Max: 80,
                         ticks: {
                             // forces step size to be 50 units
-                            stepSize: 10
+                            stepSize: 15
                         }
                     }
                 }
             }
         });
 
-
+        // ***********************************************************************
 
         const ctx6 = document.getElementById('avgSatScore');
         new Chart(ctx6, {
@@ -440,6 +442,7 @@
             }
         });
 
+        // **************************************************************************
 
         const ctx8 = document.getElementById('studentAttendence');
         new Chart(ctx8, {
@@ -511,6 +514,8 @@
                 }
             }
         });
+
+        // ************************************************************************
 
         const ctx9 = document.getElementById('teacherAttendence');
         new Chart(ctx9, {
@@ -598,6 +603,82 @@
                         ticks: {
                             // forces step size to be 50 units
                             stepSize: 10,
+                        }
+                    }
+                }
+            }
+        });
+
+
+        // **************************************************************************
+
+        const ctx10 = document.getElementById('studentClassratio');
+        new Chart(ctx10, {
+            type: 'bar',
+            data: {
+                labels: ["I", "II", "III", "IV", "V", "VI", 'VII', "VIII"],
+                datasets: [
+                    {
+                        label: 'Student Class ratio',
+                        data: [18.3, 19.6, 27.4, 25.5, 18.1, 29.5, 28.1, 33.2],
+                        backgroundColor: [
+
+
+                            'rgba(255, 205, 86)',
+                            'rgba(153, 102, 255)',
+                            'rgba(75, 192, 192)',
+                            'rgba(255, 99, 132)',
+                            'rgba(195, 19, 124)',
+                            'rgba(84, 162, 35)',
+                            'rgba(250, 192, 12)',
+                            'rgba(201, 203, 107)'
+
+
+
+                        ],
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+
+                responsive: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Student Class Ratio    25.5%',
+
+                        font: {
+                            size: 20,
+                            weight: "bold",
+                        },
+
+
+                    },
+
+                },
+                scales: {
+                    x: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Classes'
+                        }
+                    },
+                    y: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Ratio'
+                        },
+                        Min: 0,
+                        Max: 35,
+                        ticks: {
+                            // forces step size to be 50 units
+                            stepSize: 1,
                         }
                     }
                 }
