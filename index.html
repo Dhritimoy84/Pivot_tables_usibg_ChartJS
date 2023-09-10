@@ -237,8 +237,9 @@
                     label: 'PAT Score',
 
                     data: [40, 54, 61, 52],
+                    fill: false,
                     backgroundColor: [
-                        'rgba(25, 26, 04)',
+                        'rgba(205, 26, 040)',
                         'rgba(159, 16, 206)',
                         'rgba(35, 76, 156)',
                         'rgba(74, 132, 135)'
@@ -249,6 +250,13 @@
                 ]
             },
             options: {
+
+                indexAxis: 'y',
+                elements: {
+                    bar: {
+                        Width: 12,
+                    }
+                },
                 responsive: false,
                 plugins: {
                     legend: {
@@ -270,21 +278,21 @@
                     x: {
                         title: {
                             display: true,
-                            text: 'School Type'
+                            text: 'Score'
                         }
                     },
                     y: {
                         display: true,
                         title: {
                             display: true,
-                            text: 'Score'
+                            text: 'Perameter'
                         },
-                        Min: 0,
-                        Max: 80,
-                        ticks: {
-                            // forces step size to be 50 units
-                            stepSize: 15
-                        }
+                        Min: 30,
+                        Max: 70,
+                        // ticks: {
+                        //     // forces step size to be 50 units
+                        //     stepSize: 15
+                        // }
                     }
                 }
             }
@@ -685,10 +693,10 @@
             }
         });
 
-// *************************************************************************
+        // *************************************************************************
 
 
-const ctx11 = document.getElementById('schoolInfraScore');
+        const ctx11 = document.getElementById('schoolInfraScore');
         new Chart(ctx11, {
             type: 'bar',
             data: {
@@ -698,7 +706,7 @@ const ctx11 = document.getElementById('schoolInfraScore');
                     data: [28.54, 25.6],
                     backgroundColor: [
                         'rgba(205, 26, 104)',
-                       
+
 
                         'rgba(78, 182, 215)'
 
@@ -708,6 +716,7 @@ const ctx11 = document.getElementById('schoolInfraScore');
                 ]
             },
             options: {
+
                 responsive: false,
                 plugins: {
                     legend: {
@@ -749,7 +758,69 @@ const ctx11 = document.getElementById('schoolInfraScore');
             }
         });
 
+        // *************************************************************
 
+        const ctx12 = document.getElementById('gsqacScore');
+        new Chart(ctx12, {
+            type: 'bar',
+            data: {
+                labels: ["Lower Primary School", "Middle School"],
+                datasets: [{
+                    label: 'Infrastructure Score',
+                    data: [58.54, 67.6],
+                    backgroundColor: [
+                        'rgba(105, 163, 164)',
+
+
+                        'rgba(148, 12, 215)'
+
+                    ],
+                    borderWidth: 1
+                },
+                ]
+            },
+            options: {
+
+                responsive: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'GSQAC Score     57%',
+
+                        font: {
+                            size: 20,
+                            weight: "bold",
+                        }
+                    }
+                },
+
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'School Type'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Score'
+                        },
+                        Min: 0,
+                        Max: 30,
+                        ticks: {
+                            // forces step size to be 50 units
+                            stepSize: 5,
+                        }
+                    }
+                }
+
+
+            }
+        });
 
 
 
