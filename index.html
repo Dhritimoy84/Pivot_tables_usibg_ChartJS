@@ -21,6 +21,7 @@
         <canvas id="avgPatScore"></canvas>
         <canvas id="avgSatScore"></canvas>
         <canvas id="studentAddition"></canvas>
+        <canvas id="studentAttendence"></canvas>
         <canvas id="teacherAttendence"></canvas>
         <canvas id="studentClassratio"></canvas>
         <canvas id="schoolInfraScore"></canvas>
@@ -199,11 +200,6 @@
                     }
                 },
 
-                // scales: {
-                //     // y: {
-                //     //     beginAtZero: true
-                //     // }
-                // }
                 scales: {
                     x: {
                         title: {
@@ -348,7 +344,11 @@
         });
 
 
-        // *******************************************************************
+        // **************************3rd Row**********************
+
+
+
+
 
 
 
@@ -380,7 +380,7 @@
                 ]
             },
             options: {
-                // indexAxis: 'y',
+              
                 responsive: false,
                 plugins: {
                     legend: {
@@ -395,31 +395,38 @@
                             weight: "bold",
                         },
 
-                        scales: {
-                            x: {
-                                title: {
-                                    display: true,
-                                    text: 'Classes'
-                                }
-                            },
-                            y: {
-                                beginAtZero: false,
-                                title: {
-                                    display: true,
-                                    text: 'Addition Rate'
-                                },
-                                Min: -2,
-                                Max: 15,
-                                ticks: {
-                                    // forces step size to be 50 units
-                                    stepSize: 1
-                                }
-                            }
+                     
+                    },
+                
+                },
+                scales: {
+                    x: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Classes'
+                        }
+                    },
+                    y: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Rate'
+                        },
+                        Min: 0,
+                        Max: 12,
+                        ticks: {
+                            // forces step size to be 50 units
+                            stepSize: 2,
                         }
                     }
                 }
             }
         });
+
+
+
+
 
 
 
