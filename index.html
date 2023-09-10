@@ -448,7 +448,7 @@
                 labels: ["I", "II", "III", "IV", "V", "VI", 'VII', "VIII"],
                 datasets: [
                     {
-                        label: 'Boys',
+                        label: 'Students Attendence',
                         data: [44, 66, 44, 58, 71, 65, 63, 72],
                         backgroundColor: [
 
@@ -507,6 +507,98 @@
                         //     // forces step size to be 50 units
                         //     stepSize: 2,
                         // }
+                    }
+                }
+            }
+        });
+
+        const ctx9 = document.getElementById('teacherAttendence');
+        new Chart(ctx9, {
+            type: 'bar',
+            data: {
+                labels: ["Lower Primary School", "Middle School"],
+                datasets: [
+                    {
+                        label: 'Teacher Attendence',
+                        data: [94, 96],
+                        backgroundColor: [
+
+
+                            'rgba(75, 192, 192)',
+                            'rgba(201, 203, 107)'
+
+
+                        ],
+                        borderWidth: 1
+                    }
+                    /*,
+                    {
+                        label: 'Arts Background',
+                        data: [97, 9],
+                        backgroundColor: [
+
+
+
+                            'rgba(255, 205, 86)'
+
+                        ],
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Commerce Background',
+                        data: [93, 95],
+                        backgroundColor: [
+
+
+
+                            'rgba(201, 203, 107)'
+
+                        ],
+                        borderWidth: 1
+                    }
+                    */
+                ]
+            },
+            options: {
+
+                responsive: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Teacher Attendence     94%',
+
+                        font: {
+                            size: 20,
+                            weight: "bold",
+                        },
+
+
+                    }
+
+                },
+                scales: {
+                    x: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'School type'
+                        }
+                    },
+                    y: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Attendence'
+                        },
+                        Min: 50,
+                        Max: 100,
+                        ticks: {
+                            // forces step size to be 50 units
+                            stepSize: 10,
+                        }
                     }
                 }
             }
