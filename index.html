@@ -1,12 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Overview </title>
 </head>
+
 <body>
-    <header>Bird's Eye View- (Std. 1-8) </header>
+    <header>
+        <p id="headpara">Bird's Eye View- (Std. 1-8)</p>
+    </header>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <div class="container">
+        <canvas id="noOfSchool"></canvas>
+        <canvas id="noOfStudent"></canvas>
+        <canvas id="noOfTeacher"></canvas>
+        <canvas id="pupilTeacherRatio"></canvas>
+        <canvas id="avgPatScore"></canvas>
+        <canvas id="avgSatScore"></canvas>
+
+
+
+
+
+
+    </div>
+
+    <script>
+
+
+        // *************************************************************************
+        const ctx1 = document.getElementById('noOfSchool');
+        new Chart(ctx1, {
+            type: 'pie',
+            data: {
+                labels: ["Lower Primary School", "Middle School"
+                ],
+                datasets: [
+                    {
+                        label: 'No. of School',
+                        data: [19345, 13032],
+                        backgroundColor: [
+                            'rgba(255, 26, 104)',
+                            'rgba(54, 162, 235)'
+
+                        ],
+                        borderWidth: 1
+                    }
+
+                ]
+            },
+            options: {
+                responsive: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'No. of School  : 32,377',
+
+                        font: {
+                            size: 20,
+                            weight: "bold",
+                        }
+                    }
+                }
+
+            }
+        });
+
+
+
+
+        const ctx2 = document.getElementById('noOfStudent');
+
+        new Chart(ctx2, {
+            type: 'pie',
+            data: {
+                labels: ['1st Standard', '2nd Standard', '3rd Standard', '4th Standard', '5th Standard', '6th Standard', '7th Standard', '8th Standard'
+                ],
+                datasets: [{
+                    label: 'No. of Students',
+                    data: [8900805, 8854657, 8853565, 7834856, 7599498, 7695445, 6365246, 5146543],
+                    backgroundColor: [
+                        'rgba(235, 26, 104)',
+                        'rgba(205, 36, 194)',
+                        'rgba(135, 76, 04)',
+                        'rgba(35, 16, 100)',
+                        'rgba(239, 96, 104)',
+                        'rgba(155, 16, 106)',
+                        'rgba(235, 76, 107)',
+                        'rgba(74, 162, 235)'
+
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'No. of Students  : 4,972,874',
+
+                        font: {
+                            size: 20,
+                            weight: "bold",
+                        }
+                    }
+                }
+
+            }
+        });
+
+
+        const ctx3 = document.getElementById('noOfTeacher');
+
+        new Chart(ctx3, {
+            type: 'pie',
+            data: {
+                labels: ["Science Background", "Arts Background", "Commerce Background"
+                ],
+                datasets: [{
+                    label: 'No. of Teachers',
+                    data: [37862, 61957, 46356],
+                    backgroundColor: [
+                        'rgba(235, 26, 104)',
+                        'rgba(155, 26, 104)',
+                        'rgba(74, 162, 235)'
+
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'No. of Teachers  : 183,607',
+
+                        font: {
+                            size: 20,
+                            weight: "bold",
+                        }
+                    }
+                }
+
+            }
+        });
+        // ***************************************************************************
+        const ctx4 = document.getElementById('pupilTeacherRatio');
+        new Chart(ctx4, {
+            type: 'bar',
+            data: {
+                labels: ["Lower Primary School", "Middle School"],
+                datasets: [{
+                    label: 'Ratio',
+                    data: [28.54, 25.6],
+                    backgroundColor: [
+                        'rgba(235, 26, 104)',
+
+                        'rgba(74, 162, 235)'
+
+                    ],
+                    borderWidth: 1
+                },
+                ]
+            },
+            options: {
+                responsive: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Pupil Teacher Ratio     27.00',
+
+                        font: {
+                            size: 20,
+                            weight: "bold",
+                        },
+
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+
+
+        const ctx5 = document.getElementById('avgPatScore');
+        new Chart(ctx5, {
+            type: 'bar',
+            data: {
+                labels: ["Mathematics", "Listening Comprehension", "Reading Comprehension", "Reading Vocabulary" ],
+                datasets: [{
+                    label: 'PAT Score',
+                   
+                    data: [9.0, 8.4, 6, 12],
+                    backgroundColor: [
+                        'rgba(235, 26, 104)',
+                        'rgba(155, 16, 106)',
+                        'rgba(235, 76, 107)',
+                        'rgba(74, 162, 235)'
+
+                    ],
+                    borderWidth: 1
+                }
+                ]
+            },
+            options: {
+                responsive: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Avg. PAT Score     55.7%',
+
+                        font: {
+                            size: 20,
+                            weight: "bold",
+                        },
+
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+
+
+        const ctx6 = document.getElementById('avgSatScore');
+        new Chart(ctx6, {
+            type: 'bar',
+            data: {
+                labels: ["600-790", "800-990","1000-1190","1200-1390","1400-1600"],
+                datasets: [
+                    {
+                    label: 'Boys',
+                    data: [2.17, 2.5,2.88,3.23 , 3.51],
+                    backgroundColor: [
+                    'rgba(235, 26, 104)'
+                       
+
+                    ],
+                    borderWidth: 1
+                },
+                    {
+                    label: 'Girls',
+                    data: [2.17, 2.5,2.88,3.23 , 3.51],
+                    backgroundColor: [
+                  
+                        'rgba(14, 162, 35)'
+
+                    ],
+                    borderWidth: 1
+                },
+                ]
+            },
+            options: {
+                responsive: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Avg. SAT Score    43.8%',
+
+                        font: {
+                            size: 20,
+                            weight: "bold",
+                        },
+
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+
+
 </body>
+
 </html>
