@@ -20,6 +20,11 @@
         <canvas id="pupilTeacherRatio"></canvas>
         <canvas id="avgPatScore"></canvas>
         <canvas id="avgSatScore"></canvas>
+        <canvas id="studentAddition"></canvas>
+        <canvas id="teacherAttendence"></canvas>
+        <canvas id="studentClassratio"></canvas>
+        <canvas id="schoolInfraScore"></canvas>
+        <canvas id="gsqacScore"></canvas>
 
 
 
@@ -92,7 +97,7 @@
                         'rgba(35, 16, 100)',
                         'rgba(239, 96, 104)',
                         'rgba(155, 16, 106)',
-                        'rgba(235, 76, 107)',
+                        'rgba(235, 76, 07)',
                         'rgba(74, 162, 235)'
 
                     ],
@@ -190,15 +195,37 @@
                         font: {
                             size: 20,
                             weight: "bold",
-                        },
+                        }
+                    }
+                },
 
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
+                // scales: {
+                //     // y: {
+                //     //     beginAtZero: true
+                //     // }
+                // }
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'School Type'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Ratio'
+                        },
+                        Min: 0,
+                        Max: 30,
+                        ticks: {
+                            // forces step size to be 50 units
+                            stepSize: 1,
                         }
                     }
                 }
+
+
             }
         });
 
@@ -208,10 +235,10 @@
         new Chart(ctx5, {
             type: 'bar',
             data: {
-                labels: ["Mathematics", "Listening Comprehension", "Reading Comprehension", "Reading Vocabulary" ],
+                labels: ["Mathematics", "Listening Comprehension", "Reading Comprehension", "Reading Vocabulary"],
                 datasets: [{
                     label: 'PAT Score',
-                   
+
                     data: [9.0, 8.4, 6, 12],
                     backgroundColor: [
                         'rgba(235, 26, 104)',
@@ -237,12 +264,28 @@
                         font: {
                             size: 20,
                             weight: "bold",
-                        },
+                        }
 
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
+
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'School Type'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Ratio'
+                        },
+                        Min: 40,
+                        Max: 70,
+                        ticks: {
+                            // forces step size to be 50 units
+                            stepSize: 10
                         }
                     }
                 }
@@ -255,28 +298,28 @@
         new Chart(ctx6, {
             type: 'bar',
             data: {
-                labels: ["600-790", "800-990","1000-1190","1200-1390","1400-1600"],
+                labels: ["600-790", "800-990", "1000-1190", "1200-1390", "1400-1600"],
                 datasets: [
                     {
-                    label: 'Boys',
-                    data: [2.17, 2.5,2.88,3.23 , 3.51],
-                    backgroundColor: [
-                    'rgba(235, 26, 104)'
-                       
+                        label: 'Boys',
+                        data: [2.17, 2.5, 2.88, 3.23, 3.51],
+                        backgroundColor: [
+                            'rgba(235, 26, 104)'
 
-                    ],
-                    borderWidth: 1
-                },
+
+                        ],
+                        borderWidth: 1
+                    },
                     {
-                    label: 'Girls',
-                    data: [2.17, 2.5,2.88,3.23 , 3.51],
-                    backgroundColor: [
-                  
-                        'rgba(14, 162, 35)'
+                        label: 'Girls',
+                        data: [2.17, 2.5, 2.88, 3.23, 3.51],
+                        backgroundColor: [
 
-                    ],
-                    borderWidth: 1
-                },
+                            'rgba(14, 162, 35)'
+
+                        ],
+                        borderWidth: 1
+                    },
                 ]
             },
             options: {
@@ -303,6 +346,82 @@
                 }
             }
         });
+
+
+        // *******************************************************************
+
+
+
+
+
+        const ctx7 = document.getElementById('studentAddition');
+        new Chart(ctx7, {
+            type: 'bar',
+            data: {
+                labels: ["I", "II", "III", "IV", "V", "VI", 'VII', "VIII"],
+                datasets: [
+                    {
+                        label: 'Boys',
+                        data: [1.3, 2.6, 4.4, 5.5, 10.1, 3.5, 3.1, 4.2],
+                        backgroundColor: [
+                            'rgba(235, 26, 104)',
+                            'rgba(255, 99, 132)',
+                            'rgba(255, 159, 64)',
+                            'rgba(255, 205, 86)',
+                            'rgba(75, 192, 192)',
+                            'rgba(54, 162, 235)',
+                            'rgba(153, 102, 255)',
+                            'rgba(201, 203, 207)'
+
+
+                        ],
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                // indexAxis: 'y',
+                responsive: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Student Addition     3.6%',
+
+                        font: {
+                            size: 20,
+                            weight: "bold",
+                        },
+
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Classes'
+                                }
+                            },
+                            y: {
+                                beginAtZero: false,
+                                title: {
+                                    display: true,
+                                    text: 'Addition Rate'
+                                },
+                                Min: -2,
+                                Max: 15,
+                                ticks: {
+                                    // forces step size to be 50 units
+                                    stepSize: 1
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+
 
     </script>
 
